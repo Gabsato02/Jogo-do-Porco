@@ -1,0 +1,109 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Porco</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" </head>
+
+<body>
+    <div class="m-auto d-flex flex-column justify-content-center">
+        <h1 class="h1 text-center">Jogo do Porco</h1>
+        <img src="img/pig.png" class="img img-fluid mx-auto mb-4" id="pig-image">
+        <p class="text-center w-50 mx-auto mb-4">Escolha o número de jogadores e o limite de pontos. Cada jogador rola o dado repetidamente, acumulando os números
+            que sairem como pontos. O jogador rola até que saia o número 1 ou ele decida segurar seus pontos e passar a vez. 
+            Rolando o número 1, os pontos não acumulam e a vez é passada para o próximo. 
+        </p>
+    </div>
+
+    <div class="text-center">
+        <label for="gameLimit">Selecione o limite de pontos:</label>
+
+        <select name="gameLimit" id="gameLimit">
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <div class="text-center">
+
+        <label for="playersN">Selecione a quantidade de players:</label>
+
+        <select name="playersN" id="playersNumber">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+    </div>
+
+    <div class="row text-center justify-content-center">
+        <div class="col-3 m-3 player-card" id="player1-card">
+            <span class="h5">Jogador 1</span>
+            <p>Pontos Temporários: <span id="player1-temporary-points">0</span></p>
+            <p class="h6">Pontos Totais: <span id="player1-total-points">0</span></p>
+        </div>
+
+        <div class="col-3 m-3 player-card" id="player2-card">
+            <span class="h5">Jogador 2</span>
+            <p>Pontos Temporários: <span id="player2-temporary-points">0</span></p>
+            <p class="h6">Pontos Totais: <span id="player2-total-points">0</span></p>
+        </div>
+
+        <div class="col-3 m-3 player-card" id="player3-card">
+            <span class="h5">Jogador 3</span>
+            <p>Pontos Temporários: <span id="player3-temporary-points">0</span></p>
+            <p class="h6">Pontos Totais: <span id="player3-total-points">0</span></p>
+        </div>
+
+        <div class="col-3 m-3 player-card" id="player4-card">
+            <span class="h5">Jogador 4</span>
+            <p>Pontos Temporários: <span id="player4-temporary-points">0</span></p>
+            <p class="h6">Pontos Totais: <span id="player4-total-points">0</span></p>
+        </div>
+
+        <div class="col-3 m-3 player-card" id="player5-card">
+            <span class="h5">Jogador 5</span>
+            <p>Pontos Temporários: <span id="player5-temporary-points">0</span></p>
+            <p class="h6">Pontos Totais: <span id="player5-total-points">0</span></p>
+        </div>
+
+        <div class="col-3 m-3 player-card" id="player6-card">
+            <span class="h5">Jogador 6</span>
+            <p>Pontos Temporários: <span id="player6-temporary-points">0</span></p>
+            <p class="h6">Pontos Totais: <span id="player6-total-points">0</span></p>
+        </div>
+
+        <span class="h1" id="winner"></span>
+    </div>
+
+    <div class="text-center">
+        <img src="img/1.png" class="my-2" id="diceImage">
+    </div>
+
+    <div class="m-auto d-flex justify-content-center">
+        <button onclick="game.verifyCurrentPlayer().rollDice()" id="buttonGame" class="m-3 button">Rodar o
+            dado</button>
+        <button onclick="game.verifyCurrentPlayer().stopDice()" id="buttonStop" class="m-3 button">Parar o
+            dado</button>
+        <button onclick="game.newGame()" id="buttonNewGame" class="m-3 button">Novo Jogo</button>
+    </div>
+</body>
+
+</html>

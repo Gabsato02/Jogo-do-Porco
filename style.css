@@ -1,0 +1,73 @@
+colors {
+    --green-card: black;
+}
+
+body {
+    margin: auto;
+}  
+
+#dice {
+    font-size: 5rem;
+}
+
+.player-card {
+    border: solid 1px grey;
+    box-shadow: 3px 3px 3px grey;
+}
+
+.button {
+    width: 15vw;
+    height: 10vh;
+    font-weight: bolder;
+    box-shadow: 3px 3px 3px grey;
+}
+
+#buttonGame {
+    background-color: rgb(45, 179, 78);
+    color: white;
+    border-color:  rgb(45, 179, 78);
+}
+
+#buttonStop {
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+#buttonNewGame {
+    background-color: rgb(5, 111, 226);
+    color: white;
+    border-color: rgb(5, 111, 226);
+}
+
+#pig-image {
+    width: 10vw;
+    animation: bounce 1s infinite;
+}
+
+#diceImage {
+    width: 5vw;
+    border-radius: 10px;
+}
+
+.rotate {
+    animation: rotation 1s linear;
+}
+
+.shake {
+    animation: bounce 0.1s linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  @keyframes bounce { 
+    0%, 20%, 40%, 60%, 80%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-5px);}
+  } 
